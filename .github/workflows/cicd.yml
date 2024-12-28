@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Action started"
+
       - name: Checkout
         uses: actions/checkout@v4
       - name: Login to docker hub
