@@ -30,5 +30,7 @@ jobs:
     steps:
       - name: Pull docker image from docker hub
         run: docker pull bbsimon/node-app:latest
+      - name: Remove old container
+        run: docker rm -f node-app-container
       - name: Run docker container
         run: docker run -d -p 5000:5000 --name node-app-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' bbsimon/node-app
