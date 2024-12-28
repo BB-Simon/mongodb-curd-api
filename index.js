@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
-app.get("/health", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({
     statusText: "Up",
     message: "Server is up and running",
